@@ -21,4 +21,8 @@ Route::middleware(['auth'])->group(function () {
     // HOME PAGE
     Route::get('/', [\App\Http\Controllers\PageController::class, 'home'])
         ->name('home');
+
+    // CUSTOMER PAGE
+    Route::resource('customer', \App\Http\Controllers\CustomerController::class)
+        ->except(['show']);
 });
